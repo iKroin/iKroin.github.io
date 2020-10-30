@@ -2,14 +2,10 @@
 <html lang="en-US">
     <head>
         <style>
-             body {
-             background-image: url("websitebackground.png");
-             background-repeat: no-repeat;
-             }
             .mydiv {
                 height: 170px;
                 width: 400px;
-           
+                background:white;
             
                 position: fixed;
                 top: 50%;
@@ -112,6 +108,8 @@
             <style>
                 body {font-family: Arial, Helvetica, sans-serif;}
                 * {box-sizing: border-box;}
+
+                h1 {font-size: 20px}
                 
                 /* Button used to open the contact form - fixed at the bottom of the page */
                 .open-button {
@@ -122,9 +120,10 @@
                   cursor: pointer;
                   opacity: 0.8;
                   position: fixed;
-                  bottom: 23px;
-                  right: 28px;
+                  bottom: 260px;
+                  right: 40%;
                   width: 280px;
+                  font-size: 20px;
                 }
                 
                 /* The popup form - hidden by default */
@@ -152,13 +151,7 @@
                   border: none;
                   background: #f1f1f1;
                 }
-                
-                /* When the inputs get focus, do something */
-                .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-                  background-color: #ddd;
-                  outline: none;
-                }
-                
+              
                 /* Set a style for the submit/login button */
                 .form-container .btn {
                   background-color: #4CAF50;
@@ -175,32 +168,29 @@
                 .form-container .cancel {
                   background-color: red;
                 }
-                
-                /* Add some hover effects to buttons */
-                .form-container .btn:hover, .open-button:hover {
-                  opacity: 1;
-                }
+               
                 </style>
                 </head>
                 <body>
                 
-                <h2>Emergency Unlock</h2>
                 
-                <button class="open-button" onclick="unlock()">unlock</button>
-            
+                
+                <button class="open-button" onclick="unlock()">Unlock</button>
+                
                 <div class="form-popup" id="myForm">
                     <div class="mydiv">
                   <form action="/action_page.php" class="form-container">
-                    <h1>Are you sure you want to unlock?</h1>
+                    <h1> Are you sure you want to unlock?</h1>
+                    
                 
                     <button type="submit" class="btn">Yes</button>
-                    <button type="submit" class="btn">No</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">No</button>
                     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 
                   </form>
                     </div>
                 </div>
-                </div>
+                
                 <script>
                 function unlock() {
                   document.getElementById("myForm").style.display = "block";
