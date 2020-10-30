@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <style>
+             body {
+             background-image: url("websitebackground.png");
+             background-repeat: no-repeat;
+             }
+            .mydiv {
+                height: 170px;
+                width: 400px;
+                background:white;
+            
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin-top: -100px;
+                margin-left: -200px;
+            }
+            </style>
+    
+        <meta charset="UTF-8">
+        <title>Project Quasar</title>
+    </head>
+    <body style="background-color: aqua;">
+        <h1 style="text-align:center">Teacher Page</h1>
+        <table>
+            <table>
+                <fieldset style="text-align:center"> 
+                <p> <b>Classroom management</b></p>
+                <form name="frmLogin" method="post" action="login.php">
+                <p>
+                <label for="enter Classroom">Enter Classroom </label>
+                <input type="text" name="txtName" id=txtName>
+                </p>
+                <fieldset style="text-align: center">
+                <p>Blocked for students</p>
+                <style>
+                    .switch {
+                      position: relative;
+                      display: inline-block;
+                      width: 40px;
+                      height: 24px;
+                    }
+                    
+                    .switch input { 
+                      opacity: 0;
+                      width: 0;
+                      height: 0;
+                    }
+                    
+                    .slider {
+                      position: absolute;
+                      cursor: pointer;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      background-color: #ccc;
+                      -webkit-transition: .4s;
+                      transition: .4s;
+                    }
+                    
+                    .slider:before {
+                      position: absolute;
+                      content: "";
+                      height: 16px;
+                      width: 16px;
+                      left: 4px;
+                      bottom: 4px;
+                      background-color: white;
+                      -webkit-transition: .4s;
+                      transition: .4s;
+                    }
+                    
+                    input:checked + .slider {
+                      background-color: #2196F3;
+                    }
+                    
+                    
+                    
+                    input:checked + .slider:before {
+                      -webkit-transform: translateX(20px);
+                      -ms-transform: translateX(20px);
+                      transform: translateX(17px);
+                    }
+                    
+                    /* Rounded sliders */
+                    .slider.round {
+                      border-radius: 24px;
+                    }
+                    
+                    .slider.round:before {
+                      border-radius: 50%;
+                    }
+                    </style>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p>
+                <input style="text-align: center" type="submit" name="Submit" id="Submit" value="Submit">
+                </p>
+                </form>
+                </fieldset>
+                </table>
+        </table>
+
+        <table>
+            <fieldset style="text-align:center"> 
+            <h1> Emergency Unlock</h1>
+            <style>
+                body {font-family: Arial, Helvetica, sans-serif;}
+                * {box-sizing: border-box;}
+                
+                /* Button used to open the contact form - fixed at the bottom of the page */
+                .open-button {
+                  background-color: #555;
+                  color: white;
+                  padding: 16px 20px;
+                  border: none;
+                  cursor: pointer;
+                  opacity: 0.8;
+                  position: fixed;
+                  bottom: 23px;
+                  right: 28px;
+                  width: 280px;
+                }
+                
+                /* The popup form - hidden by default */
+                .form-popup {
+                  display: none;
+                  position: fixed;
+                  bottom: 0;
+                  right: 15px;
+                  border: 3px solid #f1f1f1;
+                  z-index: 9;
+                }
+                
+                /* Add styles to the form container */
+                .form-container {
+                  max-width: 300px;
+                  padding: 10px;
+                  background-color: white;
+                }
+                
+                /* Full-width input fields */
+                .form-container input[type=text], .form-container input[type=password] {
+                  width: 100%;
+                  padding: 15px;
+                  margin: 5px 0 22px 0;
+                  border: none;
+                  background: #f1f1f1;
+                }
+                
+                /* When the inputs get focus, do something */
+                .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+                  background-color: #ddd;
+                  outline: none;
+                }
+                
+                /* Set a style for the submit/login button */
+                .form-container .btn {
+                  background-color: #4CAF50;
+                  color: white;
+                  padding: 16px 20px;
+                  border: none;
+                  cursor: pointer;
+                  width: 100%;
+                  margin-bottom:10px;
+                  opacity: 0.8;
+                }
+                
+                /* Add a red background color to the cancel button */
+                .form-container .cancel {
+                  background-color: red;
+                }
+                
+                /* Add some hover effects to buttons */
+                .form-container .btn:hover, .open-button:hover {
+                  opacity: 1;
+                }
+                </style>
+                </head>
+                <body>
+                
+                <h2>Emergency Unlock</h2>
+                
+                <button class="open-button" onclick="unlock()">unlock</button>
+                <div class="mydiv">
+                <div class="form-popup" id="myForm">
+                    <div class="mydiv">
+                  <form action="/action_page.php" class="form-container">
+                    <h1>Are you sure you want to unlock?</h1>
+                
+                    <button type="submit" class="btn">Yes</button>
+                    <button type="submit" class="btn">No</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+                  </form>
+                    </div>
+                </div>
+                </div>
+                <script>
+                function unlock() {
+                  document.getElementById("myForm").style.display = "block";
+                }
+                
+                function closeForm() {
+                  document.getElementById("myForm").style.display = "none";
+                }
+                </script>
+                
+                </body>
+            </label>
+            </form>
+            </fieldset>
+            </table>
+
+
+        
+
+
+
+       
+|
+    </body>
+</html>
